@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using ByteDev.Io;
+using ByteDev.ValueTypes;
 
 namespace ByteDev.FolderReader.Model
 {
@@ -35,7 +36,7 @@ namespace ByteDev.FolderReader.Model
             }
 
             if (_displayOptions.ShowCounterPrefix)
-                name = _fileNumber.ToPaddedZeroString(_totalFiles) + ": " + name;
+                name = _fileNumber.ToStringZeroPadded(_totalFiles.GetDigits()) + ": " + name;
 
             return name;
         }

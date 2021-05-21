@@ -42,6 +42,9 @@
     <Reference Include="ByteDev.Strings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ByteDev.Strings.8.1.0\lib\netstandard2.0\ByteDev.Strings.dll</HintPath>
     </Reference>
+    <Reference Include="ByteDev.ValueTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ByteDev.ValueTypes.1.2.0\lib\netstandard2.0\ByteDev.ValueTypes.dll</HintPath>
+    </Reference>
     <Reference Include="ByteDev.WinForms, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\ByteDev.WinForms-1.0.2\ByteDev.WinForms.dll</HintPath>
