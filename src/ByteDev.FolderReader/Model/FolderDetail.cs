@@ -2,7 +2,7 @@
 
 namespace ByteDev.FolderReader.Model
 {
-    public class FolderDetail
+    internal class FolderDetail
     {
         private readonly DirectoryInfo _directoryInfo;
         private readonly bool _useDelimiter;

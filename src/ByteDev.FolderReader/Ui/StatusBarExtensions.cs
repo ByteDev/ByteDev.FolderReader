@@ -18,15 +18,15 @@ namespace ByteDev.FolderReader.Ui
         {
             string message;
 
-            if (fileCount == 1)
-                message = "1 file";
-            else
-                message = fileCount + " files";
-
             if (folderCount == 1)
-                message += " / " + folderCount + " folder";
+                message = "1 folder";
             else
-                message += " / " + folderCount + " folders";
+                message = $"{folderCount} folders";
+
+            if (fileCount == 1)
+                message += " / 1 file";
+            else
+                message += $" / {fileCount} files";
             
             SetStatus(source, message);
         }

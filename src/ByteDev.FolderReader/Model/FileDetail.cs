@@ -3,7 +3,7 @@ using ByteDev.Io;
 
 namespace ByteDev.FolderReader.Model
 {
-    public class FileDetail
+    internal class FileDetail
     {
         private readonly FileInfo _fileInfo;
         private readonly FileDisplayOptions _displayOptions;
@@ -20,35 +20,24 @@ namespace ByteDev.FolderReader.Model
 
         public override string ToString()
         {
-            string s = _fileInfo.Name;
+            string name = _fileInfo.Name;
 
             if (_displayOptions.ShowFullPath)
-            {
-                s = _fileInfo.FullName;
-            }
+                name = _fileInfo.FullName;
 
             if (!_displayOptions.ShowFileSuffix)
-            {
-                s = Path.ChangeExtension(s, null);
-            }
+                name = Path.ChangeExtension(name, null);
 
             if (_displayOptions.ShowFileSize)
             {
                 var fileSize = new FileSize(_fileInfo.Length);
-                s += " (" + fileSize.ReadableSize + ")";
+                name += " (" + fileSize.ReadableSize + ")";
             }
 
             if (_displayOptions.ShowCounterPrefix)
-            {
-                s = _fileNumber.ToString().PadLeft(NumberDigits(_totalFiles), '0') + ": " + s;
-            }
+                name = _fileNumber.ToPaddedZeroString(_totalFiles) + ": " + name;
 
-            return s;
-        }
-
-        private int NumberDigits(long i)
-        {
-            return i.ToString().Length;
+            return name;
         }
     }
 }

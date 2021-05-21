@@ -11,7 +11,7 @@ using SuffixFilter = ByteDev.FolderReader.Model.SuffixFilter;
 namespace ByteDev.FolderReader
 {
 	public partial class MainForm : Form
-	{
+    {
 	    public MainForm()
 		{
 			InitializeComponent();
@@ -27,10 +27,10 @@ namespace ByteDev.FolderReader
 	    {
 	        return new FileDisplayOptions
 	        {
-	            ShowFullPath = showFullPathCheckBox.Checked,
-	            ShowFileSize = showFileSizeCheckBox.Checked,
-	            ShowFileSuffix = showFileSuffixCheckBox.Checked,
-	            ShowCounterPrefix = showCounterPrefixCheckBox.Checked
+	            ShowFullPath = fullPathToolStripMenuItem.Checked,
+	            ShowFileSize = fileSizeToolStripMenuItem.Checked,
+	            ShowFileSuffix = fileSuffixToolStripMenuItem.Checked,
+	            ShowCounterPrefix = fileCounterToolStripMenuItem.Checked
 	        };
 	    }
 
@@ -46,14 +46,14 @@ namespace ByteDev.FolderReader
 
 	        var folderCount = 0;
 
-            if (showFoldersCheckBox.Checked)
+            if (foldersToolStripMenuItem.Checked)
 	        {
                 folderCount = PrintFolders(folderTextBox.Text);
 	        }
 
             var fileCount = 0;
 
-            if (showFilesCheckBox.Checked)
+            if (filesToolStripMenuItem.Checked)
             {
                 var options = CreateFileDisplayOptions();
                 var suffixFilter = new SuffixFilter(suffixTextBox.Text);
@@ -72,7 +72,7 @@ namespace ByteDev.FolderReader
 
 	        foreach (var directoryInfo in dirInfo.GetDirectories())
 	        {
-                var folderDetail = new FolderDetail(directoryInfo, folderDelimiterCheckBox.Checked);
+                var folderDetail = new FolderDetail(directoryInfo, folderDelimiterToolStripMenuItem.Checked);
 
                 outputTextBox.PrintLine(folderDetail.ToString());
 	            folderCount++;
@@ -138,53 +138,6 @@ namespace ByteDev.FolderReader
             PrintFoldersAndFiles();
 		}
 
-	    private void browseCommandButton_Click(object sender, EventArgs e)
-	    {
-	        folderTextBox.Text = WinForms.Dialogs.FolderDialog.SelectFolder(folderTextBox.Text);
-            
-            PrintFoldersAndFiles();
-		}
-
-	    private void textWrapCheckBox_CheckedChanged(object sender, EventArgs e)
-	    {
-	        outputTextBox.WordWrap = textWrapCheckBox.Checked;
-	    }
-
-        private void folderDelimiterCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            PrintFoldersAndFiles();
-        }
-
-        private void showFilesCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            PrintFoldersAndFiles();
-        }
-
-	    private void showCounterPrefixCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			PrintFoldersAndFiles();
-		}
-
-	    private void showFoldersCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            PrintFoldersAndFiles();
-        }
-
-	    private void showFileSuffixCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			PrintFoldersAndFiles();
-		}
-
-		private void showFileSizeCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			PrintFoldersAndFiles();
-		}
-
-		private void showFullPathCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			PrintFoldersAndFiles();
-		}
-
 		private void folderTextBox_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (e.IsEnter())
@@ -201,12 +154,76 @@ namespace ByteDev.FolderReader
 			}
 		}
 
-        private void copyToClipboardButton_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Menu - File - Event Handlers
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderTextBox.Text = WinForms.Dialogs.FolderDialog.SelectFolder(folderTextBox.Text);
+            
+            PrintFoldersAndFiles();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			Application.Exit();
+        }
+
+        #endregion
+
+        #region Menu - View - Event Handlers
+
+        private void fullPathToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        private void textWrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            outputTextBox.WordWrap = textWrapToolStripMenuItem.Checked;
+        }
+
+        private void foldersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        private void folderDelimiterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        private void filesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        private void fileSuffixToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        private void fileSizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        private void fileCounterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        #endregion
+
+        #region Menu - Output - Event Handlers
+
+        private void outputCopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CopyOutputToClipboard();
         }
 
-        private void saveAsButton_Click(object sender, EventArgs e)
+        private void outputSaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveOutput();
         }

@@ -29,233 +29,263 @@
 		private void InitializeComponent()
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.showCounterPrefixCheckBox = new System.Windows.Forms.CheckBox();
-            this.textWrapCheckBox = new System.Windows.Forms.CheckBox();
             this.statusBar = new System.Windows.Forms.StatusBar();
-            this.showFileSuffixCheckBox = new System.Windows.Forms.CheckBox();
-            this.showFileSizeCheckBox = new System.Windows.Forms.CheckBox();
-            this.showFullPathCheckBox = new System.Windows.Forms.CheckBox();
             this.suffixTextBox = new System.Windows.Forms.TextBox();
-            this.browseCommandButton = new System.Windows.Forms.Button();
             this.outputTextBox = new System.Windows.Forms.TextBox();
             this.folderTextBox = new System.Windows.Forms.TextBox();
-            this.showFoldersCheckBox = new System.Windows.Forms.CheckBox();
-            this.copyToClipboardButton = new System.Windows.Forms.Button();
-            this.saveAsButton = new System.Windows.Forms.Button();
-            this.showFilesCheckBox = new System.Windows.Forms.CheckBox();
-            this.folderDelimiterCheckBox = new System.Windows.Forms.CheckBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fullPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.foldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderDelimiterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSuffixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileCounterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputSaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // showCounterPrefixCheckBox
-            // 
-            this.showCounterPrefixCheckBox.Location = new System.Drawing.Point(795, 49);
-            this.showCounterPrefixCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showCounterPrefixCheckBox.Name = "showCounterPrefixCheckBox";
-            this.showCounterPrefixCheckBox.Size = new System.Drawing.Size(131, 24);
-            this.showCounterPrefixCheckBox.TabIndex = 21;
-            this.showCounterPrefixCheckBox.Text = "File Counter";
-            this.showCounterPrefixCheckBox.CheckedChanged += new System.EventHandler(this.showCounterPrefixCheckBox_CheckedChanged);
-            // 
-            // textWrapCheckBox
-            // 
-            this.textWrapCheckBox.Location = new System.Drawing.Point(112, 49);
-            this.textWrapCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textWrapCheckBox.Name = "textWrapCheckBox";
-            this.textWrapCheckBox.Size = new System.Drawing.Size(120, 24);
-            this.textWrapCheckBox.TabIndex = 20;
-            this.textWrapCheckBox.Text = "Text Wrap";
-            this.textWrapCheckBox.CheckedChanged += new System.EventHandler(this.textWrapCheckBox_CheckedChanged);
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 689);
+            this.statusBar.Location = new System.Drawing.Point(0, 610);
             this.statusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(958, 34);
+            this.statusBar.Size = new System.Drawing.Size(678, 34);
             this.statusBar.TabIndex = 19;
-            // 
-            // showFileSuffixCheckBox
-            // 
-            this.showFileSuffixCheckBox.Checked = true;
-            this.showFileSuffixCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.showFileSuffixCheckBox.Location = new System.Drawing.Point(560, 49);
-            this.showFileSuffixCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showFileSuffixCheckBox.Name = "showFileSuffixCheckBox";
-            this.showFileSuffixCheckBox.Size = new System.Drawing.Size(120, 24);
-            this.showFileSuffixCheckBox.TabIndex = 18;
-            this.showFileSuffixCheckBox.Text = "File Suffix";
-            this.showFileSuffixCheckBox.CheckedChanged += new System.EventHandler(this.showFileSuffixCheckBox_CheckedChanged);
-            // 
-            // showFileSizeCheckBox
-            // 
-            this.showFileSizeCheckBox.Location = new System.Drawing.Point(685, 49);
-            this.showFileSizeCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showFileSizeCheckBox.Name = "showFileSizeCheckBox";
-            this.showFileSizeCheckBox.Size = new System.Drawing.Size(108, 24);
-            this.showFileSizeCheckBox.TabIndex = 17;
-            this.showFileSizeCheckBox.Text = "File Size";
-            this.showFileSizeCheckBox.CheckedChanged += new System.EventHandler(this.showFileSizeCheckBox_CheckedChanged);
-            // 
-            // showFullPathCheckBox
-            // 
-            this.showFullPathCheckBox.Location = new System.Drawing.Point(12, 49);
-            this.showFullPathCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showFullPathCheckBox.Name = "showFullPathCheckBox";
-            this.showFullPathCheckBox.Size = new System.Drawing.Size(108, 24);
-            this.showFullPathCheckBox.TabIndex = 16;
-            this.showFullPathCheckBox.Text = "Full Path";
-            this.showFullPathCheckBox.CheckedChanged += new System.EventHandler(this.showFullPathCheckBox_CheckedChanged);
             // 
             // suffixTextBox
             // 
-            this.suffixTextBox.Location = new System.Drawing.Point(744, 6);
+            this.suffixTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.suffixTextBox.Location = new System.Drawing.Point(590, 38);
             this.suffixTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.suffixTextBox.Name = "suffixTextBox";
-            this.suffixTextBox.Size = new System.Drawing.Size(70, 26);
-            this.suffixTextBox.TabIndex = 15;
+            this.suffixTextBox.Size = new System.Drawing.Size(75, 26);
+            this.suffixTextBox.TabIndex = 1;
+            this.suffixTextBox.Text = "*.*";
             this.suffixTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.suffixTextBox_KeyPress);
-            // 
-            // browseCommandButton
-            // 
-            this.browseCommandButton.Location = new System.Drawing.Point(828, 6);
-            this.browseCommandButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.browseCommandButton.Name = "browseCommandButton";
-            this.browseCommandButton.Size = new System.Drawing.Size(112, 35);
-            this.browseCommandButton.TabIndex = 14;
-            this.browseCommandButton.Text = "Browse";
-            this.browseCommandButton.Click += new System.EventHandler(this.browseCommandButton_Click);
             // 
             // outputTextBox
             // 
             this.outputTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.outputTextBox.Location = new System.Drawing.Point(12, 92);
+            this.outputTextBox.Location = new System.Drawing.Point(13, 74);
             this.outputTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.outputTextBox.Size = new System.Drawing.Size(918, 532);
+            this.outputTextBox.Size = new System.Drawing.Size(652, 526);
             this.outputTextBox.TabIndex = 13;
             this.outputTextBox.WordWrap = false;
             // 
             // folderTextBox
             // 
-            this.folderTextBox.Location = new System.Drawing.Point(12, 6);
+            this.folderTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.folderTextBox.Location = new System.Drawing.Point(13, 38);
             this.folderTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.folderTextBox.Name = "folderTextBox";
-            this.folderTextBox.Size = new System.Drawing.Size(718, 26);
-            this.folderTextBox.TabIndex = 12;
+            this.folderTextBox.Size = new System.Drawing.Size(569, 26);
+            this.folderTextBox.TabIndex = 0;
             this.folderTextBox.Text = "C:\\";
             this.folderTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.folderTextBox_KeyPress);
             // 
-            // showFoldersCheckBox
+            // menuStrip
             // 
-            this.showFoldersCheckBox.AutoSize = true;
-            this.showFoldersCheckBox.Location = new System.Drawing.Point(231, 49);
-            this.showFoldersCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showFoldersCheckBox.Name = "showFoldersCheckBox";
-            this.showFoldersCheckBox.Size = new System.Drawing.Size(88, 24);
-            this.showFoldersCheckBox.TabIndex = 22;
-            this.showFoldersCheckBox.Text = "Folders";
-            this.showFoldersCheckBox.UseVisualStyleBackColor = true;
-            this.showFoldersCheckBox.CheckedChanged += new System.EventHandler(this.showFoldersCheckBox_CheckedChanged);
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.outputToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(678, 33);
+            this.menuStrip.TabIndex = 27;
+            this.menuStrip.Text = "menuStrip1";
             // 
-            // copyToClipboardButton
+            // fileToolStripMenuItem
             // 
-            this.copyToClipboardButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.copyToClipboardButton.Location = new System.Drawing.Point(824, 635);
-            this.copyToClipboardButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.copyToClipboardButton.Name = "copyToClipboardButton";
-            this.copyToClipboardButton.Size = new System.Drawing.Size(112, 35);
-            this.copyToClipboardButton.TabIndex = 23;
-            this.copyToClipboardButton.Text = "Copy";
-            this.copyToClipboardButton.UseVisualStyleBackColor = true;
-            this.copyToClipboardButton.Click += new System.EventHandler(this.copyToClipboardButton_Click);
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // saveAsButton
+            // openToolStripMenuItem
             // 
-            this.saveAsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveAsButton.Location = new System.Drawing.Point(704, 635);
-            this.saveAsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.saveAsButton.Name = "saveAsButton";
-            this.saveAsButton.Size = new System.Drawing.Size(112, 35);
-            this.saveAsButton.TabIndex = 24;
-            this.saveAsButton.Text = "Save As";
-            this.saveAsButton.UseVisualStyleBackColor = true;
-            this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
-            // showFilesCheckBox
+            // exitToolStripMenuItem
             // 
-            this.showFilesCheckBox.AutoSize = true;
-            this.showFilesCheckBox.Checked = true;
-            this.showFilesCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.showFilesCheckBox.Location = new System.Drawing.Point(480, 49);
-            this.showFilesCheckBox.Name = "showFilesCheckBox";
-            this.showFilesCheckBox.Size = new System.Drawing.Size(68, 24);
-            this.showFilesCheckBox.TabIndex = 25;
-            this.showFilesCheckBox.Text = "Files";
-            this.showFilesCheckBox.UseVisualStyleBackColor = true;
-            this.showFilesCheckBox.CheckedChanged += new System.EventHandler(this.showFilesCheckBox_CheckedChanged);
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // folderDelimiterCheckBox
+            // viewToolStripMenuItem
             // 
-            this.folderDelimiterCheckBox.AutoSize = true;
-            this.folderDelimiterCheckBox.Checked = true;
-            this.folderDelimiterCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.folderDelimiterCheckBox.Location = new System.Drawing.Point(325, 49);
-            this.folderDelimiterCheckBox.Name = "folderDelimiterCheckBox";
-            this.folderDelimiterCheckBox.Size = new System.Drawing.Size(146, 24);
-            this.folderDelimiterCheckBox.TabIndex = 26;
-            this.folderDelimiterCheckBox.Text = "Folder Delimiter";
-            this.folderDelimiterCheckBox.UseVisualStyleBackColor = true;
-            this.folderDelimiterCheckBox.CheckedChanged += new System.EventHandler(this.folderDelimiterCheckBox_CheckedChanged);
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fullPathToolStripMenuItem,
+            this.textWrapToolStripMenuItem,
+            this.foldersToolStripMenuItem,
+            this.folderDelimiterToolStripMenuItem,
+            this.filesToolStripMenuItem,
+            this.fileSuffixToolStripMenuItem,
+            this.fileSizeToolStripMenuItem,
+            this.fileCounterToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // fullPathToolStripMenuItem
+            // 
+            this.fullPathToolStripMenuItem.CheckOnClick = true;
+            this.fullPathToolStripMenuItem.Name = "fullPathToolStripMenuItem";
+            this.fullPathToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fullPathToolStripMenuItem.Text = "Full Path";
+            this.fullPathToolStripMenuItem.Click += new System.EventHandler(this.fullPathToolStripMenuItem_Click);
+            // 
+            // textWrapToolStripMenuItem
+            // 
+            this.textWrapToolStripMenuItem.CheckOnClick = true;
+            this.textWrapToolStripMenuItem.Name = "textWrapToolStripMenuItem";
+            this.textWrapToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.textWrapToolStripMenuItem.Text = "Text Wrap";
+            this.textWrapToolStripMenuItem.Click += new System.EventHandler(this.textWrapToolStripMenuItem_Click);
+            // 
+            // foldersToolStripMenuItem
+            // 
+            this.foldersToolStripMenuItem.CheckOnClick = true;
+            this.foldersToolStripMenuItem.Name = "foldersToolStripMenuItem";
+            this.foldersToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.foldersToolStripMenuItem.Text = "Folders";
+            this.foldersToolStripMenuItem.Click += new System.EventHandler(this.foldersToolStripMenuItem_Click);
+            // 
+            // folderDelimiterToolStripMenuItem
+            // 
+            this.folderDelimiterToolStripMenuItem.Checked = true;
+            this.folderDelimiterToolStripMenuItem.CheckOnClick = true;
+            this.folderDelimiterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.folderDelimiterToolStripMenuItem.Name = "folderDelimiterToolStripMenuItem";
+            this.folderDelimiterToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.folderDelimiterToolStripMenuItem.Text = "Folder Delimiter";
+            this.folderDelimiterToolStripMenuItem.Click += new System.EventHandler(this.folderDelimiterToolStripMenuItem_Click);
+            // 
+            // filesToolStripMenuItem
+            // 
+            this.filesToolStripMenuItem.Checked = true;
+            this.filesToolStripMenuItem.CheckOnClick = true;
+            this.filesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.filesToolStripMenuItem.Name = "filesToolStripMenuItem";
+            this.filesToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.filesToolStripMenuItem.Text = "Files";
+            this.filesToolStripMenuItem.Click += new System.EventHandler(this.filesToolStripMenuItem_Click);
+            // 
+            // fileSuffixToolStripMenuItem
+            // 
+            this.fileSuffixToolStripMenuItem.Checked = true;
+            this.fileSuffixToolStripMenuItem.CheckOnClick = true;
+            this.fileSuffixToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.fileSuffixToolStripMenuItem.Name = "fileSuffixToolStripMenuItem";
+            this.fileSuffixToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fileSuffixToolStripMenuItem.Text = "File Suffix";
+            this.fileSuffixToolStripMenuItem.Click += new System.EventHandler(this.fileSuffixToolStripMenuItem_Click);
+            // 
+            // fileSizeToolStripMenuItem
+            // 
+            this.fileSizeToolStripMenuItem.CheckOnClick = true;
+            this.fileSizeToolStripMenuItem.Name = "fileSizeToolStripMenuItem";
+            this.fileSizeToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fileSizeToolStripMenuItem.Text = "File Size";
+            this.fileSizeToolStripMenuItem.Click += new System.EventHandler(this.fileSizeToolStripMenuItem_Click);
+            // 
+            // fileCounterToolStripMenuItem
+            // 
+            this.fileCounterToolStripMenuItem.CheckOnClick = true;
+            this.fileCounterToolStripMenuItem.Name = "fileCounterToolStripMenuItem";
+            this.fileCounterToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fileCounterToolStripMenuItem.Text = "File Counter";
+            this.fileCounterToolStripMenuItem.Click += new System.EventHandler(this.fileCounterToolStripMenuItem_Click);
+            // 
+            // outputToolStripMenuItem
+            // 
+            this.outputToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.outputCopyToolStripMenuItem,
+            this.outputSaveAsToolStripMenuItem});
+            this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
+            this.outputToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
+            this.outputToolStripMenuItem.Text = "Output";
+            // 
+            // outputCopyToolStripMenuItem
+            // 
+            this.outputCopyToolStripMenuItem.Name = "outputCopyToolStripMenuItem";
+            this.outputCopyToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
+            this.outputCopyToolStripMenuItem.Text = "Copy";
+            this.outputCopyToolStripMenuItem.Click += new System.EventHandler(this.outputCopyToolStripMenuItem_Click);
+            // 
+            // outputSaveAsToolStripMenuItem
+            // 
+            this.outputSaveAsToolStripMenuItem.Name = "outputSaveAsToolStripMenuItem";
+            this.outputSaveAsToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
+            this.outputSaveAsToolStripMenuItem.Text = "Save As";
+            this.outputSaveAsToolStripMenuItem.Click += new System.EventHandler(this.outputSaveAsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 723);
-            this.Controls.Add(this.folderDelimiterCheckBox);
-            this.Controls.Add(this.showFilesCheckBox);
-            this.Controls.Add(this.saveAsButton);
-            this.Controls.Add(this.copyToClipboardButton);
-            this.Controls.Add(this.showFoldersCheckBox);
-            this.Controls.Add(this.showCounterPrefixCheckBox);
-            this.Controls.Add(this.textWrapCheckBox);
+            this.ClientSize = new System.Drawing.Size(678, 644);
             this.Controls.Add(this.statusBar);
-            this.Controls.Add(this.showFileSuffixCheckBox);
-            this.Controls.Add(this.showFileSizeCheckBox);
-            this.Controls.Add(this.showFullPathCheckBox);
             this.Controls.Add(this.suffixTextBox);
-            this.Controls.Add(this.browseCommandButton);
             this.Controls.Add(this.outputTextBox);
             this.Controls.Add(this.folderTextBox);
+            this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.CheckBox showCounterPrefixCheckBox;
-		private System.Windows.Forms.CheckBox textWrapCheckBox;
 		private System.Windows.Forms.StatusBar statusBar;
-		private System.Windows.Forms.CheckBox showFileSuffixCheckBox;
-		private System.Windows.Forms.CheckBox showFileSizeCheckBox;
-		private System.Windows.Forms.CheckBox showFullPathCheckBox;
 		private System.Windows.Forms.TextBox suffixTextBox;
-		private System.Windows.Forms.Button browseCommandButton;
 		private System.Windows.Forms.TextBox outputTextBox;
 		private System.Windows.Forms.TextBox folderTextBox;
-        private System.Windows.Forms.CheckBox showFoldersCheckBox;
-        private System.Windows.Forms.Button copyToClipboardButton;
-        private System.Windows.Forms.Button saveAsButton;
-        private System.Windows.Forms.CheckBox showFilesCheckBox;
-        private System.Windows.Forms.CheckBox folderDelimiterCheckBox;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fullPathToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textWrapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem foldersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem folderDelimiterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileSuffixToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileSizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileCounterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outputToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outputCopyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outputSaveAsToolStripMenuItem;
     }
 }

@@ -6,24 +6,10 @@
 
         public SuffixFilter(string text)
         {
-            if (text.StartsWith("*."))
-            {
-                text = text.Substring(2);
-            }
-            _text = text;
+            _text = text.StartsWith("*.") ? text.Substring(2) : text;
         }
 
-        public string Text
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(_text))
-                {
-                    return "*";
-                }
-                return _text;
-            }
-        }
+        public string Text => string.IsNullOrEmpty(_text) ? "*" : _text;
 
         public override string ToString()
         {
