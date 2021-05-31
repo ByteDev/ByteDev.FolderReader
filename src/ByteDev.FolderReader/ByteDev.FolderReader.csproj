@@ -36,11 +36,17 @@
     <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ByteDev.Crypto, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ByteDev.Crypto.7.0.0\lib\netstandard2.0\ByteDev.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ByteDev.Encoding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ByteDev.Encoding.2.0.0\lib\netstandard2.0\ByteDev.Encoding.dll</HintPath>
+    </Reference>
     <Reference Include="ByteDev.Io, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ByteDev.Io.7.2.0\lib\netstandard2.0\ByteDev.Io.dll</HintPath>
+      <HintPath>..\..\packages\ByteDev.Io.7.2.1\lib\netstandard2.0\ByteDev.Io.dll</HintPath>
     </Reference>
     <Reference Include="ByteDev.Strings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ByteDev.Strings.8.1.0\lib\netstandard2.0\ByteDev.Strings.dll</HintPath>
+      <HintPath>..\..\packages\ByteDev.Strings.9.2.0\lib\netstandard2.0\ByteDev.Strings.dll</HintPath>
     </Reference>
     <Reference Include="ByteDev.ValueTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ByteDev.ValueTypes.1.2.0\lib\netstandard2.0\ByteDev.ValueTypes.dll</HintPath>

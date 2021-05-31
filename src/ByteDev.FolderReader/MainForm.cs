@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using ByteDev.Crypto;
+using ByteDev.Crypto.Hashing;
+using ByteDev.Crypto.Hashing.Algorithms;
 using ByteDev.FolderReader.Model;
 using ByteDev.FolderReader.Ui;
 using ByteDev.WinForms;
@@ -30,7 +34,8 @@ namespace ByteDev.FolderReader
 	            ShowFullPath = fullPathToolStripMenuItem.Checked,
 	            ShowFileSize = fileSizeToolStripMenuItem.Checked,
 	            ShowFileSuffix = fileSuffixToolStripMenuItem.Checked,
-	            ShowCounterPrefix = fileCounterToolStripMenuItem.Checked
+	            ShowCounterPrefix = fileCounterToolStripMenuItem.Checked,
+                FileHash = hashTextBox.Text
 	        };
 	    }
 
@@ -83,24 +88,50 @@ namespace ByteDev.FolderReader
 
 	    private int PrintFiles(string folderPath, SuffixFilter suffixFilter, FileDisplayOptions fileDisplayOptions)
 		{
+            statusBar.SetStatus("Performing search...");
+
 			var dirInfo = new DirectoryInfo(folderPath);
 
             var fileCount = 0;
-
-	        var fileInfos = dirInfo.GetFiles("*." + suffixFilter);
             
-	        foreach (var fileInfo in fileInfos)
-			{
-                var fileDetail = new FileDetail(fileInfo, fileDisplayOptions, fileCount + 1, fileInfos.Length);
+            var fileHash = fileDisplayOptions.FileHash.Trim();
 
-                outputTextBox.PrintLine(fileDetail.ToString());
-				fileCount++;
-			}
+            if (!string.IsNullOrEmpty(fileHash))
+            {
+                var matches = GetMd5Matches(fileHash);
+
+                foreach (var match in matches)
+                {
+                    var fileDetail = new FileDetail(new FileInfo(match), fileDisplayOptions, fileCount + 1, matches.Count);
+
+                    outputTextBox.PrintLine(fileDetail.ToString());
+                    fileCount++;
+                }
+            }
+            else
+            {
+                var fileInfos = dirInfo.GetFiles("*." + suffixFilter);
+
+                foreach (var fileInfo in fileInfos)
+                {
+                    var fileDetail = new FileDetail(fileInfo, fileDisplayOptions, fileCount + 1, fileInfos.Length);
+
+                    outputTextBox.PrintLine(fileDetail.ToString());
+                    fileCount++;
+                }
+            }
 
 			return fileCount;
 		}
 
-	    private void ClearOutputAndStatus()
+        private IList<string> GetMd5Matches(string fileHash)
+        {
+            var checksumService = new FileChecksumService(new Md5Algorithm(), EncodingType.Hex);
+
+            return checksumService.Matches(folderTextBox.Text, fileHash);
+        }
+
+        private void ClearOutputAndStatus()
 		{
 			outputTextBox.Clear();
             statusBar.Clear();
@@ -153,6 +184,14 @@ namespace ByteDev.FolderReader
 				PrintFoldersAndFiles();
 			}
 		}
+
+        private void hashTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.IsEnter())
+            {
+                PrintFoldersAndFiles();
+            }
+        }
 
         #endregion
 

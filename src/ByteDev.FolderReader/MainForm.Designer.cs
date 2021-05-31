@@ -49,6 +49,9 @@
             this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputSaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hashTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,8 +66,8 @@
             // suffixTextBox
             // 
             this.suffixTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.suffixTextBox.Location = new System.Drawing.Point(590, 38);
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.suffixTextBox.Location = new System.Drawing.Point(98, 74);
             this.suffixTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.suffixTextBox.Name = "suffixTextBox";
             this.suffixTextBox.Size = new System.Drawing.Size(75, 26);
@@ -77,13 +80,13 @@
             this.outputTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.outputTextBox.Location = new System.Drawing.Point(13, 74);
+            this.outputTextBox.Location = new System.Drawing.Point(13, 110);
             this.outputTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.outputTextBox.Size = new System.Drawing.Size(652, 526);
-            this.outputTextBox.TabIndex = 13;
+            this.outputTextBox.Size = new System.Drawing.Size(652, 490);
+            this.outputTextBox.TabIndex = 3;
             this.outputTextBox.WordWrap = false;
             // 
             // folderTextBox
@@ -94,14 +97,13 @@
             this.folderTextBox.Location = new System.Drawing.Point(13, 38);
             this.folderTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.folderTextBox.Name = "folderTextBox";
-            this.folderTextBox.Size = new System.Drawing.Size(569, 26);
+            this.folderTextBox.Size = new System.Drawing.Size(652, 26);
             this.folderTextBox.TabIndex = 0;
             this.folderTextBox.Text = "C:\\";
             this.folderTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.folderTextBox_KeyPress);
             // 
             // menuStrip
             // 
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -125,14 +127,14 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -155,7 +157,7 @@
             // 
             this.fullPathToolStripMenuItem.CheckOnClick = true;
             this.fullPathToolStripMenuItem.Name = "fullPathToolStripMenuItem";
-            this.fullPathToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.fullPathToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.fullPathToolStripMenuItem.Text = "Full Path";
             this.fullPathToolStripMenuItem.Click += new System.EventHandler(this.fullPathToolStripMenuItem_Click);
             // 
@@ -163,7 +165,7 @@
             // 
             this.textWrapToolStripMenuItem.CheckOnClick = true;
             this.textWrapToolStripMenuItem.Name = "textWrapToolStripMenuItem";
-            this.textWrapToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.textWrapToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.textWrapToolStripMenuItem.Text = "Text Wrap";
             this.textWrapToolStripMenuItem.Click += new System.EventHandler(this.textWrapToolStripMenuItem_Click);
             // 
@@ -171,7 +173,7 @@
             // 
             this.foldersToolStripMenuItem.CheckOnClick = true;
             this.foldersToolStripMenuItem.Name = "foldersToolStripMenuItem";
-            this.foldersToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.foldersToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.foldersToolStripMenuItem.Text = "Folders";
             this.foldersToolStripMenuItem.Click += new System.EventHandler(this.foldersToolStripMenuItem_Click);
             // 
@@ -181,7 +183,7 @@
             this.folderDelimiterToolStripMenuItem.CheckOnClick = true;
             this.folderDelimiterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.folderDelimiterToolStripMenuItem.Name = "folderDelimiterToolStripMenuItem";
-            this.folderDelimiterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.folderDelimiterToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.folderDelimiterToolStripMenuItem.Text = "Folder Delimiter";
             this.folderDelimiterToolStripMenuItem.Click += new System.EventHandler(this.folderDelimiterToolStripMenuItem_Click);
             // 
@@ -191,7 +193,7 @@
             this.filesToolStripMenuItem.CheckOnClick = true;
             this.filesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.filesToolStripMenuItem.Name = "filesToolStripMenuItem";
-            this.filesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.filesToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.filesToolStripMenuItem.Text = "Files";
             this.filesToolStripMenuItem.Click += new System.EventHandler(this.filesToolStripMenuItem_Click);
             // 
@@ -201,7 +203,7 @@
             this.fileSuffixToolStripMenuItem.CheckOnClick = true;
             this.fileSuffixToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.fileSuffixToolStripMenuItem.Name = "fileSuffixToolStripMenuItem";
-            this.fileSuffixToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.fileSuffixToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.fileSuffixToolStripMenuItem.Text = "File Suffix";
             this.fileSuffixToolStripMenuItem.Click += new System.EventHandler(this.fileSuffixToolStripMenuItem_Click);
             // 
@@ -209,7 +211,7 @@
             // 
             this.fileSizeToolStripMenuItem.CheckOnClick = true;
             this.fileSizeToolStripMenuItem.Name = "fileSizeToolStripMenuItem";
-            this.fileSizeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.fileSizeToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.fileSizeToolStripMenuItem.Text = "File Size";
             this.fileSizeToolStripMenuItem.Click += new System.EventHandler(this.fileSizeToolStripMenuItem_Click);
             // 
@@ -217,7 +219,7 @@
             // 
             this.fileCounterToolStripMenuItem.CheckOnClick = true;
             this.fileCounterToolStripMenuItem.Name = "fileCounterToolStripMenuItem";
-            this.fileCounterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.fileCounterToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.fileCounterToolStripMenuItem.Text = "File Counter";
             this.fileCounterToolStripMenuItem.Click += new System.EventHandler(this.fileCounterToolStripMenuItem_Click);
             // 
@@ -244,11 +246,43 @@
             this.outputSaveAsToolStripMenuItem.Text = "Save &As";
             this.outputSaveAsToolStripMenuItem.Click += new System.EventHandler(this.outputSaveAsToolStripMenuItem_Click);
             // 
+            // hashTextBox
+            // 
+            this.hashTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hashTextBox.Location = new System.Drawing.Point(280, 74);
+            this.hashTextBox.Name = "hashTextBox";
+            this.hashTextBox.Size = new System.Drawing.Size(385, 26);
+            this.hashTextBox.TabIndex = 2;
+            this.hashTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hashTextBox_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(179, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "MD5 Match:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Extension:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 644);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.hashTextBox);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.suffixTextBox);
             this.Controls.Add(this.outputTextBox);
@@ -287,5 +321,8 @@
         private System.Windows.Forms.ToolStripMenuItem outputToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem outputCopyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem outputSaveAsToolStripMenuItem;
+        private System.Windows.Forms.TextBox hashTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

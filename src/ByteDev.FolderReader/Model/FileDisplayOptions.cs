@@ -9,5 +9,7 @@
 		public bool ShowFileSuffix { get; set; }
 
 		public bool ShowCounterPrefix { get; set; }
-	}
+
+        public string FileHash { get; set; }
+    }
 }
