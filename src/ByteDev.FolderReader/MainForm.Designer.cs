@@ -46,6 +46,7 @@
             this.fileSuffixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileCounterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileHashMD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputSaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,6 +105,7 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -148,7 +150,8 @@
             this.filesToolStripMenuItem,
             this.fileSuffixToolStripMenuItem,
             this.fileSizeToolStripMenuItem,
-            this.fileCounterToolStripMenuItem});
+            this.fileCounterToolStripMenuItem,
+            this.fileHashMD5ToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.viewToolStripMenuItem.Text = "&View";
@@ -157,7 +160,7 @@
             // 
             this.fullPathToolStripMenuItem.CheckOnClick = true;
             this.fullPathToolStripMenuItem.Name = "fullPathToolStripMenuItem";
-            this.fullPathToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fullPathToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.fullPathToolStripMenuItem.Text = "Full Path";
             this.fullPathToolStripMenuItem.Click += new System.EventHandler(this.fullPathToolStripMenuItem_Click);
             // 
@@ -165,7 +168,7 @@
             // 
             this.textWrapToolStripMenuItem.CheckOnClick = true;
             this.textWrapToolStripMenuItem.Name = "textWrapToolStripMenuItem";
-            this.textWrapToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.textWrapToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.textWrapToolStripMenuItem.Text = "Text Wrap";
             this.textWrapToolStripMenuItem.Click += new System.EventHandler(this.textWrapToolStripMenuItem_Click);
             // 
@@ -173,7 +176,7 @@
             // 
             this.foldersToolStripMenuItem.CheckOnClick = true;
             this.foldersToolStripMenuItem.Name = "foldersToolStripMenuItem";
-            this.foldersToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.foldersToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.foldersToolStripMenuItem.Text = "Folders";
             this.foldersToolStripMenuItem.Click += new System.EventHandler(this.foldersToolStripMenuItem_Click);
             // 
@@ -183,7 +186,7 @@
             this.folderDelimiterToolStripMenuItem.CheckOnClick = true;
             this.folderDelimiterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.folderDelimiterToolStripMenuItem.Name = "folderDelimiterToolStripMenuItem";
-            this.folderDelimiterToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.folderDelimiterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.folderDelimiterToolStripMenuItem.Text = "Folder Delimiter";
             this.folderDelimiterToolStripMenuItem.Click += new System.EventHandler(this.folderDelimiterToolStripMenuItem_Click);
             // 
@@ -193,7 +196,7 @@
             this.filesToolStripMenuItem.CheckOnClick = true;
             this.filesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.filesToolStripMenuItem.Name = "filesToolStripMenuItem";
-            this.filesToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.filesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.filesToolStripMenuItem.Text = "Files";
             this.filesToolStripMenuItem.Click += new System.EventHandler(this.filesToolStripMenuItem_Click);
             // 
@@ -203,7 +206,7 @@
             this.fileSuffixToolStripMenuItem.CheckOnClick = true;
             this.fileSuffixToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.fileSuffixToolStripMenuItem.Name = "fileSuffixToolStripMenuItem";
-            this.fileSuffixToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fileSuffixToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.fileSuffixToolStripMenuItem.Text = "File Suffix";
             this.fileSuffixToolStripMenuItem.Click += new System.EventHandler(this.fileSuffixToolStripMenuItem_Click);
             // 
@@ -211,7 +214,7 @@
             // 
             this.fileSizeToolStripMenuItem.CheckOnClick = true;
             this.fileSizeToolStripMenuItem.Name = "fileSizeToolStripMenuItem";
-            this.fileSizeToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fileSizeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.fileSizeToolStripMenuItem.Text = "File Size";
             this.fileSizeToolStripMenuItem.Click += new System.EventHandler(this.fileSizeToolStripMenuItem_Click);
             // 
@@ -219,9 +222,17 @@
             // 
             this.fileCounterToolStripMenuItem.CheckOnClick = true;
             this.fileCounterToolStripMenuItem.Name = "fileCounterToolStripMenuItem";
-            this.fileCounterToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.fileCounterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.fileCounterToolStripMenuItem.Text = "File Counter";
             this.fileCounterToolStripMenuItem.Click += new System.EventHandler(this.fileCounterToolStripMenuItem_Click);
+            // 
+            // fileHashMD5ToolStripMenuItem
+            // 
+            this.fileHashMD5ToolStripMenuItem.CheckOnClick = true;
+            this.fileHashMD5ToolStripMenuItem.Name = "fileHashMD5ToolStripMenuItem";
+            this.fileHashMD5ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.fileHashMD5ToolStripMenuItem.Text = "File - Hash (MD5)";
+            this.fileHashMD5ToolStripMenuItem.Click += new System.EventHandler(this.fileHashMD5ToolStripMenuItem_Click);
             // 
             // outputToolStripMenuItem
             // 
@@ -235,14 +246,14 @@
             // outputCopyToolStripMenuItem
             // 
             this.outputCopyToolStripMenuItem.Name = "outputCopyToolStripMenuItem";
-            this.outputCopyToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.outputCopyToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
             this.outputCopyToolStripMenuItem.Text = "&Copy";
             this.outputCopyToolStripMenuItem.Click += new System.EventHandler(this.outputCopyToolStripMenuItem_Click);
             // 
             // outputSaveAsToolStripMenuItem
             // 
             this.outputSaveAsToolStripMenuItem.Name = "outputSaveAsToolStripMenuItem";
-            this.outputSaveAsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.outputSaveAsToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
             this.outputSaveAsToolStripMenuItem.Text = "Save &As";
             this.outputSaveAsToolStripMenuItem.Click += new System.EventHandler(this.outputSaveAsToolStripMenuItem_Click);
             // 
@@ -324,5 +335,6 @@
         private System.Windows.Forms.TextBox hashTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem fileHashMD5ToolStripMenuItem;
     }
 }

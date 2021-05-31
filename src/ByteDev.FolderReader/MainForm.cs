@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using ByteDev.Crypto;
-using ByteDev.Crypto.Hashing;
-using ByteDev.Crypto.Hashing.Algorithms;
 using ByteDev.FolderReader.Model;
 using ByteDev.FolderReader.Ui;
 using ByteDev.WinForms;
@@ -35,8 +31,8 @@ namespace ByteDev.FolderReader
 	            ShowFileSize = fileSizeToolStripMenuItem.Checked,
 	            ShowFileSuffix = fileSuffixToolStripMenuItem.Checked,
 	            ShowCounterPrefix = fileCounterToolStripMenuItem.Checked,
-                FileHash = hashTextBox.Text
-	        };
+                ShowFileMd5 = fileHashMD5ToolStripMenuItem.Checked
+            };
 	    }
 
 	    private void PrintFoldersAndFiles()
@@ -94,11 +90,11 @@ namespace ByteDev.FolderReader
 
             var fileCount = 0;
             
-            var fileHash = fileDisplayOptions.FileHash.Trim();
+            var fileHash = hashTextBox.Text.Trim();
 
             if (!string.IsNullOrEmpty(fileHash))
             {
-                var matches = GetMd5Matches(fileHash);
+                var matches = ChecksumService.GetMd5Matches(folderTextBox.Text, fileHash);
 
                 foreach (var match in matches)
                 {
@@ -123,13 +119,6 @@ namespace ByteDev.FolderReader
 
 			return fileCount;
 		}
-
-        private IList<string> GetMd5Matches(string fileHash)
-        {
-            var checksumService = new FileChecksumService(new Md5Algorithm(), EncodingType.Hex);
-
-            return checksumService.Matches(folderTextBox.Text, fileHash);
-        }
 
         private void ClearOutputAndStatus()
 		{
@@ -249,6 +238,11 @@ namespace ByteDev.FolderReader
         }
 
         private void fileCounterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintFoldersAndFiles();
+        }
+
+        private void fileHashMD5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PrintFoldersAndFiles();
         }

@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChecksumService.cs" />
     <Compile Include="Ui\FileDialog.cs" />
     <Compile Include="Ui\KeyPressEventArgsExtensions.cs" />
     <Compile Include="Model\FileDisplayOptions.cs" />

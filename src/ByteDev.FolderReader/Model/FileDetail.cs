@@ -35,6 +35,9 @@ namespace ByteDev.FolderReader.Model
                 name += " (" + fileSize.ReadableSize + ")";
             }
 
+            if (_displayOptions.ShowFileMd5)
+                name += " -> " + ChecksumService.GetMd5(_fileInfo.FullName);
+
             if (_displayOptions.ShowCounterPrefix)
                 name = _fileNumber.ToStringZeroPadded(_totalFiles.GetDigits()) + ": " + name;
 

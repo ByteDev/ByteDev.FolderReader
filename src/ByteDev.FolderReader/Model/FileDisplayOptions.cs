@@ -10,6 +10,6 @@
 
 		public bool ShowCounterPrefix { get; set; }
 
-        public string FileHash { get; set; }
+        public bool ShowFileMd5 { get; set; }
     }
 }
